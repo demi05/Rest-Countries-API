@@ -82,6 +82,10 @@ select option {
   cursor: pointer;
   background-color: var(--Dark-Blue-DarkMode-Elements);
 }
+.country-data a {
+  text-decoration: none;
+  color: var(--White-DarkMode-Text-LightMode-Elements);
+}
 .country-data img {
   min-height: 30vh;
   width: 100%;
@@ -95,6 +99,23 @@ select option {
 }
 .country-data-text p span {
   color: var(--Dark-Gray-Light-Mode-Input);
+}
+.countries-details-div {
+  padding: 0 2em;
+}
+.countries-details-div a {
+  text-decoration: none;
+  color: var(--White-DarkMode-Text-LightMode-Elements);
+}
+.back {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+  font-size: 1.4rem;
+  padding: 0.4em 1.1em;
+  background-color: var(--Dark-Blue-DarkMode-Elements);
+  border-radius: 0.5rem;
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {

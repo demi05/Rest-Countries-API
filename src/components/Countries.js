@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Countries = () => {
   const [countries, setCountries] = useState([]);
@@ -23,19 +24,21 @@ const Countries = () => {
 
         return (
           <div key={numericCode} className="country-data">
-            <img src={flags.png} alt={name} />
-            <div className="country-data-text">
-              <h3>name</h3>
-              <p>
-                Population: <span>{population}</span>
-              </p>
-              <p>
-                Region: <span>{region}</span>
-              </p>
-              <p>
-                Capital: <span>{capital}</span>
-              </p>
-            </div>
+            <Link to="./countriesdetails">
+              <img src={flags.png} alt={name} />
+              <div className="country-data-text">
+                <h3>Name:</h3>
+                <p>
+                  Population: <span>{population}</span>
+                </p>
+                <p>
+                  Region: <span>{region}</span>
+                </p>
+                <p>
+                  Capital: <span>{capital}</span>
+                </p>
+              </div>
+            </Link>
           </div>
         );
       })}
