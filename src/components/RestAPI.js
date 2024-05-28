@@ -1,4 +1,3 @@
-import "./RestAPI.css";
 import { useEffect, useState } from "react";
 
 const RestAPI = () => {
@@ -17,24 +16,26 @@ const RestAPI = () => {
   }, []);
 
   return (
-    <div className="country-data">
+    <div className="country-data-div">
       {countries.map((country) => {
         const { numericCode, name, population, region, capital, flags } =
           country;
 
         return (
-          <div key={numericCode}>
+          <div key={numericCode} className="country-data">
             <img src={flags.png} alt={name} />
-            <h3>Name:</h3>
-            <h4>
-              Population: <span>{population}</span>
-            </h4>
-            <h4>
-              Region: <span>{region}</span>
-            </h4>
-            <h4>
-              Capital: <span>{capital}</span>
-            </h4>
+            <div className="country-data-text">
+              <h3>Name:</h3>
+              <p>
+                Population: <span>{population}</span>
+              </p>
+              <p>
+                Region: <span>{region}</span>
+              </p>
+              <p>
+                Capital: <span>{capital}</span>
+              </p>
+            </div>
           </div>
         );
       })}

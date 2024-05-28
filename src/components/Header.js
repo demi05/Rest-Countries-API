@@ -1,4 +1,3 @@
-import "./Header.css";
 import Mode from "./Mode";
 
 const Header = () => {
