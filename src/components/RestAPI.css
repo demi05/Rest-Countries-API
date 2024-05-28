@@ -1,0 +1,9 @@
+.country-data {
+  border: 2px solid red;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  gap: 2em;
+  object-fit: cover;
+}
