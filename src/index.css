@@ -13,7 +13,6 @@
   --White-DarkMode-Text-LightMode-Elements: hsl(0, 0%, 100%);
 }
 .App {
-  /* padding: 0 2em; */
   background-color: var(--Very-Dark-Blue-DarkModeBackground);
   color: var(--White-DarkMode-Text-LightMode-Elements);
   font-family: "Nunito Sans", sans-serif;
@@ -29,12 +28,23 @@ header {
   background-color: var(--Dark-Blue-DarkMode-Elements);
 }
 .mode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 13%;
   margin-left: auto;
 }
 .search {
   display: flex;
   align-items: center;
-  padding: 1em 2em;
+  padding: 3em 2em;
+}
+.input-div {
+  background-color: var(--Dark-Blue-DarkMode-Elements);
+  padding-left: 1em;
+  border-radius: 0.5rem;
+  width: 25%;
+  /* border: 1px solid red; */
 }
 input,
 select {
@@ -42,12 +52,18 @@ select {
   border: none;
   background-color: var(--Dark-Blue-DarkMode-Elements);
   color: var(--White-DarkMode-Text-LightMode-Elements);
+  outline: none;
+}
+input {
+  border-radius: 1rem;
+  width: 90%;
 }
 input::placeholder {
   color: var(--White-DarkMode-Text-LightMode-Elements);
 }
 select {
   margin-left: auto;
+  border-radius: 0.5rem;
 }
 .country-data-div {
   /* border: 2px solid red; */
@@ -55,13 +71,17 @@ select {
   align-items: center;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
-  gap: 2em;
+  gap: 3em;
   padding: 0 2em;
 }
 .country-data {
   object-fit: cover;
   cursor: pointer;
   background-color: var(--Dark-Blue-DarkMode-Elements);
+}
+.country-data img {
+  min-height: 30vh;
+  width: 100%;
 }
 .country-data-text {
   padding: 1.5em;

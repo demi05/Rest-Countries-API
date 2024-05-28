@@ -9,7 +9,7 @@ const RestAPI = () => {
     const data = await fetch(url);
     const countries = await data.json();
     setCountries(countries);
-    console.log(countries);
+    // console.log(countries);
   };
   useEffect(() => {
     fetchCountryData();
