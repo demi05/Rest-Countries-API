@@ -10,9 +10,9 @@ const Mode = () => {
   };
 
   return (
-    <div className="mode">
+    <div className="mode" onClick={toggleMode}>
       <FontAwesomeIcon icon={faMoon} />
-      <h2 onClick={toggleMode}>{mode ? "Dark" : "Light"} Mode</h2>
+      <h2>{mode ? "Dark" : "Light"} Mode</h2>
     </div>
   );
 };

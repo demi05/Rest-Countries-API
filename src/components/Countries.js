@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const RestAPI = () => {
+const Countries = () => {
   const [countries, setCountries] = useState([]);
 
   const url = "https://restcountries.com/v3.1/all";
@@ -25,7 +25,7 @@ const RestAPI = () => {
           <div key={numericCode} className="country-data">
             <img src={flags.png} alt={name} />
             <div className="country-data-text">
-              <h3>Name:</h3>
+              <h3>name</h3>
               <p>
                 Population: <span>{population}</span>
               </p>
@@ -43,4 +43,4 @@ const RestAPI = () => {
   );
 };
 
-export default RestAPI;
+export default Countries;

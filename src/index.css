@@ -65,6 +65,9 @@ select {
   margin-left: auto;
   border-radius: 0.5rem;
 }
+select option {
+  line-height: 1.2em;
+}
 .country-data-div {
   /* border: 2px solid red; */
   display: grid;
@@ -92,4 +95,45 @@ select {
 }
 .country-data-text p span {
   color: var(--Dark-Gray-Light-Mode-Input);
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .country-data-div {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .mode {
+    width: 30%;
+  }
+  .input-div {
+    width: 50%;
+  }
+  .search {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5em;
+  }
+  select {
+    margin-left: 0;
+  }
+  .country-data-div {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .input-div {
+    width: 60%;
+  }
+  .mode {
+    width: 40%;
+  }
+  .country-data-div {
+    grid-template-columns: 1fr;
+  }
 }
