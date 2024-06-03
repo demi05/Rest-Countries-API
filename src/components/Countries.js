@@ -1,21 +1,32 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Countries = () => {
   const [countries, setCountries] = useState([]);
 
-  const url = "https://restcountries.com/v3.1/all";
+  const filteredCountries = (region) => {
+    const url = region
+      ? `https://restcountries.com/v3.1/region/${region}`
+      : "https://restcountries.com/v3.1/all";
+    return url;
+  };
 
   const fetchCountryData = async () => {
-    const data = await fetch(url);
-    const countries = await data.json();
-    setCountries(countries);
-    // console.log(countries);
+    try {
+      const response = await axios.get(filteredCountries());
+      setCountries(response.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
   useEffect(() => {
     fetchCountryData();
+  }, [filteredCountries]);
+  useEffect(() => {
+    console.log(fetchCountryData());
   }, []);
-
+  console.log(countries);
   return (
     <div className="country-data-div">
       {countries.map((country) => {
