@@ -19,15 +19,14 @@ const Countries = () => {
   return (
     <div className="country-data-div">
       {countries.map((country) => {
-        const { numericCode, name, population, region, capital, flags } =
-          country;
+        const { cca3, name, population, region, capital, flags } = country;
 
         return (
-          <div key={numericCode} className="country-data">
-            <Link to="./countriesdetails">
-              <img src={flags.png} alt={name} />
+          <div key={cca3} className="country-data">
+            <Link to={`/countries/${name.common}`}>
+              <img src={flags.png} alt={name.common} />
               <div className="country-data-text">
-                <h3>Name:</h3>
+                <h3>Name: {name.common}</h3>
                 <p>
                   Population: <span>{population}</span>
                 </p>
