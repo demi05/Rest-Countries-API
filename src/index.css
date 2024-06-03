@@ -64,6 +64,7 @@ input::placeholder {
 select {
   margin-left: auto;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 select option {
   line-height: 1.2em;
@@ -165,6 +166,15 @@ select option {
   background-color: var(--Dark-Blue-DarkMode-Elements);
   box-shadow: 10px 20px -5px var(--White-DarkMode-Text-LightMode-Elements);
   padding: 0.3em 1em;
+}
+.spinner {
+  height: auto;
+  width: auto;
+  font-size: 7rem;
+  /* min-height: 60vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
