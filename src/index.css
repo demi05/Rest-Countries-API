@@ -12,10 +12,14 @@
   --Very-Light-Gray-LightMode-Background: hsl(0, 0%, 98%);
   --White-DarkMode-Text-LightMode-Elements: hsl(0, 0%, 100%);
 }
-.App {
+body {
   background-color: var(--Very-Dark-Blue-DarkModeBackground);
   color: var(--White-DarkMode-Text-LightMode-Elements);
   font-family: "Nunito Sans", sans-serif;
+}
+body.light-mode {
+  background-color: var(--Very-Light-Gray-LightMode-Background);
+  color: var(--Very-Dark-Blue-LightMode-Text);
 }
 img {
   max-width: 100%;
@@ -26,6 +30,9 @@ header {
   display: flex;
   align-items: center;
   background-color: var(--Dark-Blue-DarkMode-Elements);
+}
+header.light-mode {
+  background-color: var(--White-DarkMode-Text-LightMode-Elements);
 }
 .mode {
   display: flex;
@@ -46,6 +53,9 @@ header {
   width: 25%;
   /* border: 1px solid red; */
 }
+.input-div.light-mode {
+  background-color: var(--White-DarkMode-Text-LightMode-Elements);
+}
 input,
 select {
   padding: 1em 2em;
@@ -54,12 +64,20 @@ select {
   color: var(--White-DarkMode-Text-LightMode-Elements);
   outline: none;
 }
+input.light-mode,
+select.light-mode {
+  background-color: var(--White-DarkMode-Text-LightMode-Elements);
+  color: var(--Dark-Gray-Light-Mode-Input);
+}
 input {
   border-radius: 1rem;
   width: 90%;
 }
 input::placeholder {
   color: var(--White-DarkMode-Text-LightMode-Elements);
+}
+input::placeholder.light-mode {
+  color: var(--Dark-Gray-Light-Mode-Input);
 }
 select {
   margin-left: auto;
@@ -82,9 +100,15 @@ select option {
   cursor: pointer;
   background-color: var(--Dark-Blue-DarkMode-Elements);
 }
+.country-data.light-mode {
+  background-color: var(--Very-Light-Gray-LightMode-Background);
+}
 .country-data a {
   text-decoration: none;
   color: var(--White-DarkMode-Text-LightMode-Elements);
+}
+.country-data a.light-mode {
+  color: var(--Very-Dark-Blue-LightMode-Text);
 }
 .country-data img {
   min-height: 30vh;
@@ -99,6 +123,9 @@ select option {
 }
 .country-data-text p span {
   color: var(--Dark-Gray-Light-Mode-Input);
+}
+.country-data-text p span.light-mode {
+  color: var(--White-DarkMode-Text-LightMode-Elements);
 }
 .countries-details-div {
   padding: 0 2em;
@@ -148,6 +175,9 @@ select option {
 .countries-details-text div p span {
   color: var(--Dark-Gray-Light-Mode-Input);
 }
+.countries-details-text div p span.light-mode {
+  color: var(--White-DarkMode-Text-LightMode-Elements);
+}
 .countries-details-border {
   display: flex;
   align-items: center;
@@ -166,6 +196,9 @@ select option {
   background-color: var(--Dark-Blue-DarkMode-Elements);
   box-shadow: 10px 20px -5px var(--White-DarkMode-Text-LightMode-Elements);
   padding: 0.3em 1em;
+}
+.countries-details-border li.light-mode {
+  background-color: var(--White-DarkMode-Text-LightMode-Elements);
 }
 .spinner {
   height: auto;

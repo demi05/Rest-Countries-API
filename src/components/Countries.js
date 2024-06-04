@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const Countries = (prop) => {
   const [countries, setCountries] = useState([]);
   const [loading, setLoading] = useState(false);
-  console.log(prop.region);
+  // console.log(prop.region);
   const filteredCountries = (region) => {
     const url = region
       ? `https://restcountries.com/v3.1/region/${region}`
@@ -21,7 +21,7 @@ const Countries = (prop) => {
     try {
       const response = await axios.get(filteredCountries(prop.region));
       setCountries(response.data);
-      // setLoading(false);
+      setLoading(false);
     } catch (error) {
       console.error(error);
     }
@@ -36,7 +36,7 @@ const Countries = (prop) => {
     <div>
       {loading ? (
         <motion.div
-          animate={{ rotate: [360] }}
+          animate={{ rotate: [0, 360] }}
           transition={{ repeat: Infinity, duration: 0.2 }}
           className="spinner"
         >
@@ -53,7 +53,7 @@ const Countries = (prop) => {
                 <Link to={`/countries/${name.common}`}>
                   <img src={flags.png} alt={name.common} />
                   <div className="country-data-text">
-                    <h3>Name: {name.common}</h3>
+                    <h3 className="country-name">Name: {name.common}</h3>
                     <p>
                       Population: <span>{population}</span>
                     </p>
