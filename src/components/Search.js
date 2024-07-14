@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-// import axios from "axios";
 import Countries from "./Countries";
 
 const Search = () => {
