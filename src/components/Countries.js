@@ -28,7 +28,7 @@ const Countries = (prop) => {
       }
     };
     fetchCountryData();
-  }, []);
+  }, [prop.region]);
   document.body.style.backgroundColor = "hsl(207, 26%, 17%)";
 
   return (
