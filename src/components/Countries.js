@@ -17,7 +17,7 @@ const Countries = (prop) => {
   };
 
   useEffect(() => {
-    async () => {
+    const fetchCountryData = async () => {
       // setLoading(true);
       try {
         const response = await axios.get(filteredCountries(prop.region));
@@ -27,6 +27,7 @@ const Countries = (prop) => {
         console.error(error);
       }
     };
+    fetchCountryData();
   }, []);
   document.body.style.backgroundColor = "hsl(207, 26%, 17%)";
 
