@@ -22,7 +22,7 @@ const Search = () => {
     search.addEventListener(() => {
       const countryNameActual = document.querySelectorAll(".country-name");
       countryNameActual.forEach(() => {
-        if (name == countryName) {
+        if (name === countryName) {
           name.parentElement.style.display = "block";
         } else {
           name.parentElement.style.display = "none";

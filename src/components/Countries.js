@@ -29,7 +29,7 @@ const Countries = (prop) => {
 
   useEffect(() => {
     fetchCountryData();
-  }, [filteredCountries]);
+  }, [fetchCountryData]);
   document.body.style.backgroundColor = "hsl(207, 26%, 17%)";
 
   return (
