@@ -16,23 +16,18 @@ const Countries = (prop) => {
     return url;
   };
 
-  const fetchCountryData = async () => {
-    // setLoading(true);
-    try {
-      const response = await axios.get(filteredCountries(prop.region));
-      setCountries(response.data);
-      setLoading(false);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  useEffect(
-    (fetchCountryData) => {
-      fetchCountryData();
-    },
-    [fetchCountryData]
-  );
+  useEffect(() => {
+    const fetchCountryData = async () => {
+      // setLoading(true);
+      try {
+        const response = await axios.get(filteredCountries(prop.region));
+        setCountries(response.data);
+        setLoading(false);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  }, [fetchCountryData]);
   document.body.style.backgroundColor = "hsl(207, 26%, 17%)";
 
   return (
